@@ -1,6 +1,6 @@
 import '@/App.css'
 import Emulator from '@/components/emulator.tsx'
-import EmulatorControl from '@/components/emulatorControl.jsx'
+import EmulatorControl from '@/components/emulatorControl.tsx'
 
 function App() {
   return (

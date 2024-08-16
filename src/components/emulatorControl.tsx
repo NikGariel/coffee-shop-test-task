@@ -10,18 +10,28 @@ const EmulatorControl = () => {
   const [cashInValue, setCashInValue] = useState(0)
 
   useEffect(() => {
-    const handleCashinChange = (data) => {
+    const handleCashinChange = (data: { active: boolean }) => {
       setIsCashinActive(data.active)
     }
 
-    const handleCardTransactionChange = (data) => {
+    const handleCardTransactionChange = (data: {
+      active: boolean
+      success?: boolean
+    }) => {
       setIsCardTransactionActive(data.active)
-      setCardTransactionSuccess(data.success)
+      if (data.success) {
+        setCardTransactionSuccess(data.success)
+      }
     }
 
-    const handleVendingChange = (data) => {
+    const handleVendingChange = (data: {
+      active: boolean
+      success?: boolean
+    }) => {
       setIsVendingActive(data.active)
-      setVendingSuccess(data.success)
+      if (data.success) {
+        setVendingSuccess(data.success)
+      }
     }
 
     // Регистрация наблюдателей
